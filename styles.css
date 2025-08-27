@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    text-align: center;
+    color: #2d3748;
+    margin-bottom: 32px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4a5568;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #f8fafc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="file"]:focus {
+    outline: none;
+    border-color: #667eea;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="file"] {
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button[type="submit"]:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+button[type="submit"]:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: #f0fff4;
+    color: #38a169;
+    border: 1px solid #9ae6b4;
+}
+
+.message.error {
+    background-color: #fed7d7;
+    color: #e53e3e;
+    border: 1px solid #feb2b2;
+}
+
+.message.info {
+    background-color: #ebf8ff;
+    color: #3182ce;
+    border: 1px solid #90cdf4;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .container {
+        padding: 24px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="file"] {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+/* File input styling */
+input[type="file"]::file-selector-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 12px;
+    font-weight: 500;
+}
+
+input[type="file"]::file-selector-button:hover {
+    opacity: 0.9;
+}
+
