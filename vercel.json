@@ -1,27 +1,10 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "index.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "styles.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "script.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/upload.js",
-      "use": "@vercel/node"
-    }
-  ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "src": "/api/upload",
+      "dest": "/api/upload",
+      "methods": ["POST"]
     },
     {
       "src": "/(.*)",
@@ -30,8 +13,8 @@
   ],
   "functions": {
     "api/upload.js": {
+      "runtime": "@vercel/node@3.0.0",
       "maxDuration": 30
     }
   }
 }
-
